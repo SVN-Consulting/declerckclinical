@@ -17,7 +17,7 @@ import { SidebarTrigger } from '@/components/ui/sidebar';
 
 const Navbar = () => {
   return (
-    <header className='sticky top-0 z-50 flex h-20 w-full items-center justify-between bg-base-100 px-4 py-2 backdrop-saturate-180 backdrop-blur-xl border-b border-primary/50'>
+    <header className='sticky top-0 z-50 flex h-20 w-full items-center justify-between border-b bg-background/70 px-4 py-2 backdrop-blur-xl backdrop-saturate-180'>
       <Image
         src='/images/logo-transparent.png'
         alt='Decleck Clinical Logo'
@@ -59,7 +59,7 @@ const Navbar = () => {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <div className='items-center gap-4 px-3 hidden lg:flex backdrop-blur-xl transition-colors'>
+      <div className='items-center gap-4 px-3 hidden lg:flex'>
         <Button
           variant='ghost'
           className='hidden border-primary/50 bg-background/60 text-primary backdrop-blur-xl transition-colors hover:bg-primary hover:text-white lg:flex'>

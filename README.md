@@ -14,22 +14,18 @@ The project is developed using a feature-branch workflow. Each functional requir
 
 The following requirements define the planned functionality of the application.
 
-| ID      | Requirement                         | Branch                      | Status         |
-| ------- | ----------------------------------- | --------------------------- | -------------- |
-| REQ-001 | Project setup and base architecture | `feature/project-setup`     | 🔄 In progress |
-| REQ-002 | Website layout and navigation       | `feature/layout-navigation` | ⬜ Planned     |
-| REQ-003 | Home page                           | `feature/home-page`         | ⬜ Planned     |
-| REQ-004 | About / Company information         | `feature/about`             | ⬜ Planned     |
-| REQ-005 | Services                            | `feature/services`          | ⬜ Planned     |
-| REQ-006 | Therapeutic expertise               | `feature/expertise`         | ⬜ Planned     |
-| REQ-007 | Quality and Compliance              | `feature/quality`           | ⬜ Planned     |
-| REQ-008 | Partnerships                        | `feature/partnerships`      | ⬜ Planned     |
-| REQ-009 | Knowledge base                      | `feature/knowledge-base`    | ⬜ Planned     |
-| REQ-010 | Experience page                     | `feature/experience`        | ⬜ Planned     |
-| REQ-011 | Contact page and contact form       | `feature/contact`           | ⬜ Planned     |
-| REQ-012 | Legal and Privacy                   | `feature/legal`             | ⬜ Planned     |
-| REQ-013 | SEO and metadata                    | `feature/seo`               | ⬜ Planned     |
-| REQ-014 | Production deployment               | `feature/deployment`        | ⬜ Planned     |
+| ID      | Requirement                         | Branch                      | Status       |
+| ------- | ----------------------------------- | --------------------------- | ------------ |
+| REQ-001 | Project setup and base architecture | `feature/project-setup`     | ✅ Completed |
+| REQ-002 | Website layout and navigation       | `feature/layout-navigation` | ✅ Completed |
+| REQ-003 | Home page                           | `feature/home-page`         | ✅ Completed |
+| REQ-004 | About / experience information      | `feature/about`             | 🔄 Planned   |
+| REQ-005 | Services                            | `feature/services`          | ⬜ Planned   |
+| REQ-006 | Expertise & Resources               | `feature/expertise`         | ⬜ Planned   |
+| REQ-007 | Contact page and contact form       | `feature/contact`           | ⬜ Planned   |
+| REQ-008 | Legal and Privacy                   | `feature/legal`             | ⬜ Planned   |
+| REQ-009 | SEO and metadata                    | `feature/seo`               | ⬜ Planned   |
+| REQ-010 | Production deployment               | `feature/deployment`        | ⬜ Planned   |
 
 ### Requirement workflow
 
@@ -43,12 +39,8 @@ development
     ├── feature/home-page
     ├── feature/about
     ├── feature/services
-    ├── feature/contact
     ├── feature/expertise
-    ├── feature/quality
-    ├── feature/partnerships
-    ├── feature/knowledge-base
-    ├── feature/experience
+    ├── feature/contact
     ├── feature/legal
     ├── feature/seo
     └── feature/deployment
@@ -65,7 +57,7 @@ Once a requirement has been completed, the feature branch should be submitted as
 - **Next.js** — React framework for the application
 - **React** — UI library
 - **TypeScript** — Type-safe JavaScript
-- **Tailwind CSS** — Utility-first CSS framework
+- **Tailwind CSS** — Utility-first CSS framework for styling and animations
 
 ### UI
 
@@ -118,7 +110,6 @@ The README should be updated whenever a requirement changes status.
 
 - ⬜ **Planned** — Requirement has not been started.
 - 🔄 **In progress** — Requirement is currently being developed.
-- 👀 **Review** — Pull Request is open and awaiting review.
 - ✅ **Completed** — Requirement has been merged into `development`.
 - 🚀 **Released** — Requirement has been released to `main`.
 
@@ -126,6 +117,6 @@ The README should be updated whenever a requirement changes status.
 
 ## 📄 License
 
-This project is proprietary software developed for **Decleck Clinical**.
+This project is proprietary software developed for **De Cleck Clinical Consulting**.
 
-All rights reserved for **Decleck Clinical**.
+All rights reserved for **De Cleck Clinical Consulting**.

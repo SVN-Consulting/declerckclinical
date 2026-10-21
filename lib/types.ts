@@ -3,3 +3,9 @@ export type Link = {
   href: string;
   subLinks?: Link[];
 };
+
+export type SocialLink = {
+  name?: string;
+  href: string;
+  icon: React.ReactNode;
+};

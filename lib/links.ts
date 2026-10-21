@@ -1,12 +1,12 @@
 import { Link } from '@/lib/types';
 
-export const links: Link[] = [
+const links: Link[] = [
   {
     href: '#home',
     name: 'Home',
   },
   {
-    href: '/about',
+    href: '#about',
     name: 'About me',
     subLinks: [
       { href: '/about', name: 'About me' },
@@ -38,3 +38,19 @@ export const links: Link[] = [
     name: 'Contact',
   },
 ];
+
+const legalLinks: Link[] = [
+  {
+    name: 'Privacy',
+    href: '#privacy',
+  },
+  {
+    name: 'GDPR',
+    href: '#gdpr',
+  },
+  {
+    name: 'Generale Terms & Conditions',
+    href: '#general-terms-and-conditions',
+  },
+];
+export { links, legalLinks };
