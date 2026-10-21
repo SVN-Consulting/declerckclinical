@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Decleck Clinical
 
-## Getting Started
+A modern web application built with **Next.js** for Decleck Clinical.
 
-First, run the development server:
+## 📋 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**Decleck Clinical** is a Next.js-based web application designed to provide a modern, maintainable, and scalable platform for Decleck Clinical.
+
+The project is developed using a feature-branch workflow. Each functional requirement is developed in its own branch and can be merged into the main development branch through a Pull Request.
+
+---
+
+## 🚀 Requirements
+
+The following requirements define the planned functionality of the application.
+
+| ID      | Requirement                         | Branch                      | Status      |
+| ------- | ----------------------------------- | --------------------------- | ----------- |
+| REQ-001 | Project setup and base architecture | `feature/project-setup`     | 🚀 Released |
+| REQ-002 | Website layout and navigation       | `feature/layout-navigation` | 🚀 Released |
+| REQ-003 | Home page                           | `feature/home-page`         | 🚀 Released |
+| REQ-004 | About / experience information      | `feature/about`             | 🔄 Planned  |
+| REQ-005 | Services                            | `feature/services`          | ⬜ Planned  |
+| REQ-006 | Expertise & Resources               | `feature/expertise`         | ⬜ Planned  |
+| REQ-007 | Contact page and contact form       | `feature/contact`           | ⬜ Planned  |
+| REQ-008 | Legal and Privacy                   | `feature/legal`             | ⬜ Planned  |
+| REQ-009 | SEO and metadata                    | `feature/seo`               | ⬜ Planned  |
+| REQ-010 | Production deployment               | `feature/deployment`        | ⬜ Planned  |
+
+### Requirement workflow
+
+Each requirement should be implemented in its corresponding feature branch.
+
+```text
+development
+    │
+    ├── feature/project-setup
+    ├── feature/layout-navigation
+    ├── feature/home-page
+    ├── feature/about
+    ├── feature/services
+    ├── feature/expertise
+    ├── feature/contact
+    ├── feature/legal
+    ├── feature/seo
+    └── feature/deployment
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Once a requirement has been completed, the feature branch should be submitted as a **Pull Request** targeting `development`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+### Frontend
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js** — React framework for the application
+- **React** — UI library
+- **TypeScript** — Type-safe JavaScript
+- **Tailwind CSS** — Utility-first CSS framework for styling and animations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### UI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **shadcn/ui** — Reusable UI components
+- **Lucide React** — Icon library
 
-## Deploy on Vercel
+### Database
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **PostgreSQL** — Database
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Development
+
+- **ESLint** — Code quality and linting
+- **Prettier** — Code formatting
+- **Git** — Version control
+- **GitHub** — Repository and Pull Requests
+
+### Testing
+
+The project can use:
+
+- **Vitest** — Unit and component testing
+- **React Testing Library** — React component testing
+- **Playwright** — End-to-end testing
+
+---
+
+## 📦 Requirements
+
+Before running the project, make sure you have the following installed:
+
+- **Node.js** 20+
+- **npm**, **Yarn**, **pnpm**, or **Bun**
+- **Git**
+
+Check your installed versions:
+
+```bash
+node --version
+git --version
+```
+
+---
+
+## 📌 Requirement Status
+
+The README should be updated whenever a requirement changes status.
+
+### Status definitions
+
+- ⬜ **Planned** — Requirement has not been started.
+- 🔄 **In progress** — Requirement is currently being developed.
+- ✅ **Completed** — Requirement has been merged into `development`.
+- 🚀 **Released** — Requirement has been released to `main`.
+
+---
+
+## 📄 License
+
+This project is proprietary software developed for **De Cleck Clinical Consulting**.
+
+All rights reserved for **De Cleck Clinical Consulting**.

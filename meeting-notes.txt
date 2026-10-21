@@ -1,0 +1,8 @@
+*** Meeting Notes ***
+Date: 22-09-2026
+
+symmary: 
+- semi static web app
+- CMS for services, expertise, knowledge base, partnerships and experience
+- contact page with social links (linkedin, email, phone) and maps
+- own auth service 
