@@ -1,4 +1,4 @@
-export const COMPANY_NAME = 'De Cleck Clinical Consulting';
+export const COMPANY_NAME = 'De Clerck Clinical Consulting';
 export const COMPANY_SLOGAN = 'Independent clinical research associate service';
 export const BUILD_YEAR = new Date().getFullYear();
 export const COMPANY_EMAIL = 'info@decleckclinical.com';
