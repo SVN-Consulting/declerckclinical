@@ -14,18 +14,18 @@ The project is developed using a feature-branch workflow. Each functional requir
 
 The following requirements define the planned functionality of the application.
 
-| ID      | Requirement                         | Branch                      | Status       |
-| ------- | ----------------------------------- | --------------------------- | ------------ |
-| REQ-001 | Project setup and base architecture | `feature/project-setup`     | ✅ Completed |
-| REQ-002 | Website layout and navigation       | `feature/layout-navigation` | ✅ Completed |
-| REQ-003 | Home page                           | `feature/home-page`         | ✅ Completed |
-| REQ-004 | About / experience information      | `feature/about`             | 🔄 Planned   |
-| REQ-005 | Services                            | `feature/services`          | ⬜ Planned   |
-| REQ-006 | Expertise & Resources               | `feature/expertise`         | ⬜ Planned   |
-| REQ-007 | Contact page and contact form       | `feature/contact`           | ⬜ Planned   |
-| REQ-008 | Legal and Privacy                   | `feature/legal`             | ⬜ Planned   |
-| REQ-009 | SEO and metadata                    | `feature/seo`               | ⬜ Planned   |
-| REQ-010 | Production deployment               | `feature/deployment`        | ⬜ Planned   |
+| ID      | Requirement                         | Branch                      | Status      |
+| ------- | ----------------------------------- | --------------------------- | ----------- |
+| REQ-001 | Project setup and base architecture | `feature/project-setup`     | 🚀 Released |
+| REQ-002 | Website layout and navigation       | `feature/layout-navigation` | 🚀 Released |
+| REQ-003 | Home page                           | `feature/home-page`         | 🚀 Released |
+| REQ-004 | About / experience information      | `feature/about`             | 🔄 Planned  |
+| REQ-005 | Services                            | `feature/services`          | ⬜ Planned  |
+| REQ-006 | Expertise & Resources               | `feature/expertise`         | ⬜ Planned  |
+| REQ-007 | Contact page and contact form       | `feature/contact`           | ⬜ Planned  |
+| REQ-008 | Legal and Privacy                   | `feature/legal`             | ⬜ Planned  |
+| REQ-009 | SEO and metadata                    | `feature/seo`               | ⬜ Planned  |
+| REQ-010 | Production deployment               | `feature/deployment`        | ⬜ Planned  |
 
 ### Requirement workflow
 
