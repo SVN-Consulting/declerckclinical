@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Inter, Roboto } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Navbar } from '@/components/navigation';
+import { TooltipProvider } from '@/components/ui/tooltip';
+import { SidebarProvider } from '@/components/ui/sidebar';
 
 const roboto = Roboto({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -35,8 +37,14 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         roboto.variable,
       )}>
       <body className='min-h-full flex flex-col'>
-        <Navbar />
-        {children}
+        <TooltipProvider>
+          <SidebarProvider defaultOpen={false}>
+            <main className='w-full'>
+              <Navbar />
+              {children}
+            </main>
+          </SidebarProvider>
+        </TooltipProvider>
       </body>
     </html>
   );

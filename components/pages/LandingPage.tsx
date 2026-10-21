@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
+import { COMPANY_NAME, COMPANY_SLOGAN } from '@/lib/constrains';
 
 const LandingPage = () => {
   return (
@@ -18,10 +19,10 @@ const LandingPage = () => {
       <div className='absolute inset-0 bg-background/60 backdrop-blur-[2px]' />
       <div className='relative z-10 flex flex-col items-center justify-center px-6 text-center'>
         <h1 className='text-primary text-4xl font-bold tracking-tight sm:text-5xl md:text-7xl'>
-          De Cleck Clinical Consulting
+          {COMPANY_NAME}
         </h1>
         <p className='mt-4 max-w-2xl text-lg text-foreground/80 sm:text-xl'>
-          Independent clinical research associate service
+          {COMPANY_SLOGAN}
         </p>
         <Button size='lg' className='mt-8'>
           <Link href='/contact'>Contact me</Link>

@@ -1,23 +1,23 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Separator } from '../ui/separator';
-
-const links = [
-  { href: '#home', label: 'Home' },
-  { href: '/about', label: 'About me' },
-  { href: '/services', label: 'Services' },
-  { href: '/therapeutic-expertise', label: 'Therapeutic expertise' },
-  { href: '/quality', label: 'Quality and Compliance' },
-  { href: '/partnerships', label: 'Partnerships' },
-  { href: '/knowledge-base', label: 'Knowledge base' },
-  { href: '/experience', label: 'Experience' },
-  { href: '/contact', label: 'Contact' },
-];
+import { CircleUserRound } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuLink,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
+import { links } from '@/lib/links';
+import Sidenav from './Sidenav';
+import { SidebarTrigger } from '@/components/ui/sidebar';
 
 const Navbar = () => {
   return (
-    <header className='sticky top-0 z-50 flex h-20 w-full items-center justify-between bg-base-100 px-4 py-2 backdrop-saturate-180 backdrop-blur-xl border-b'>
+    <header className='sticky top-0 z-50 flex h-20 w-full items-center justify-between bg-base-100 px-4 py-2 backdrop-saturate-180 backdrop-blur-xl border-b border-primary/50'>
       <Image
         src='/images/logo-transparent.png'
         alt='Decleck Clinical Logo'
@@ -25,21 +25,54 @@ const Navbar = () => {
         height={50}
         loading='eager'
       />
-      <nav className='flex items-center gap-4 px-3'>
-        {/* {links.map((link) => (
-          <Button
-            key={link.href}
-            variant='default'
-            className='px-5 rounded-sm hover:underline'>
-            <Link href={link.href}>{link.label}</Link>
-          </Button>
-        ))} */}
-        <Button>Menu</Button>
-        <Separator orientation='vertical' />
-        <Button variant='outline' className='border-primary text-primary'>
-          Account
+      <NavigationMenu className='mx-0 lg:flex h-full max-w-none flex-1 flex-col items-center hidden'>
+        <NavigationMenuList className='flex h-full items-center justify-start gap-1 md:gap-5 text-primary'>
+          {links.map((link) => (
+            <NavigationMenuItem key={link.href}>
+              {link.subLinks?.length ? (
+                <>
+                  <NavigationMenuTrigger className='gap-2 py-2'>
+                    {link.name}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className='grid w-56 gap-1 p-2'>
+                      {link.subLinks.map((subLink) => (
+                        <li key={subLink.href}>
+                          <NavigationMenuLink
+                            render={<Link href={subLink.href} />}
+                            className='block rounded-md px-3 py-2'>
+                            {subLink.name}
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </>
+              ) : (
+                <NavigationMenuLink
+                  render={<Link href={link.href} />}
+                  className={`${navigationMenuTriggerStyle()} gap-2`}>
+                  {link.name}
+                </NavigationMenuLink>
+              )}
+            </NavigationMenuItem>
+          ))}
+        </NavigationMenuList>
+      </NavigationMenu>
+      <div className='items-center gap-4 px-3 hidden lg:flex backdrop-blur-xl transition-colors'>
+        <Button
+          variant='ghost'
+          className='hidden border-primary/50 bg-background/60 text-primary backdrop-blur-xl transition-colors hover:bg-primary hover:text-white lg:flex'>
+          <span>
+            <CircleUserRound />
+          </span>
+          <p className='hidden xl:block'>Account</p>
         </Button>
-      </nav>
+      </div>
+      <div className='block lg:hidden'>
+        <SidebarTrigger />
+        <Sidenav links={links} />
+      </div>
     </header>
   );
 };
