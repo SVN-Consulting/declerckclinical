@@ -10,7 +10,7 @@ const links: Link[] = [
     name: 'About me',
     subLinks: [
       { href: '/about', name: 'About me' },
-      { href: '/experience', name: 'Experience' },
+      { href: '/about/experience', name: 'Experience' },
     ],
   },
   {
