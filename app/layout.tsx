@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Inter, Roboto } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
-import { Footer, Navbar } from '@/components/navigation';
+import { Footer, Navbar, Sidenav } from '@/components/navigation';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { SidebarProvider } from '@/components/ui/sidebar';
 
@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'De Clerk Clinical Consulting',
+  title: 'De Clerck Clinical Consulting',
   description: 'Website for De Cleck Clinical Consulting',
   keywords:
     'De Cleck Clinical Consulting, De Cleck Clinical, De Cleck, De Cleck Consulting, De Cleck Consulting, De Cleck, De Cleck Clinical, De Cleck Clinical Consulting, Consulting, Clinical',
@@ -41,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       <body className='min-h-full flex flex-col antialiased'>
         <TooltipProvider>
           <SidebarProvider defaultOpen={false}>
+            <Sidenav />
             <main className='w-full grown'>
               <Navbar />
               {children}

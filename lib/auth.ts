@@ -1,6 +1,7 @@
 import NextAuth from 'next-auth';
 import Keycloak from 'next-auth/providers/keycloak';
 import { redirect } from 'next/navigation';
+import { SessionAuth } from './types';
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
@@ -34,15 +35,22 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
 });
 
-export const getSession = async () => {
+export const getSession = async ({
+  redirectUrl,
+}: {
+  redirectUrl?: string;
+}): Promise<SessionAuth> => {
   const session = await auth();
 
-  if (!session?.user) {
-    redirect('/api/auth/signin');
+  if (!session) {
+    if (redirectUrl) {
+      redirect(redirectUrl);
+    }
   }
 
   return {
-    ...session,
-    user: session.user,
+    isAuthenticated: !!session,
+    user: session?.user,
+    session: session,
   };
 };

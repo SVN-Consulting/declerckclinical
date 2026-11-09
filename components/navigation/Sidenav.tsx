@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import NextLink from 'next/link';
-import { ChevronDown, CircleUserRound } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -18,18 +18,16 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
-import type { Link as linkType } from '@/lib/types';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { links } from '@/lib/links';
 import { COMPANY_NAME } from '@/lib/constrains';
+import { getSession, signIn, signOut } from '@/lib/auth';
+import { SignOutButton, SignInButton } from '../feature';
 
-type SidenavProps = {
-  links: linkType[];
-};
+const Sidenav = async () => {
+  const { isAuthenticated } = await getSession({});
 
-const Sidenav = ({ links }: SidenavProps) => {
   return (
-    <Sidebar side='left' variant='sidebar'>
+    <Sidebar side='left' variant='sidebar' className='lg:hidden'>
       <SidebarHeader className='flex flex-col items-center gap-3 border-b p-4'>
         <Image
           src='/images/logo-transparent.png'
@@ -83,11 +81,16 @@ const Sidenav = ({ links }: SidenavProps) => {
           })}
         </SidebarMenu>
       </SidebarContent>
-      <SidebarFooter className='border-t m-2'>
-        <Button variant='outline' className='border-primary text-primary'>
-          <CircleUserRound />
-          <p>Account</p>
-        </Button>
+      <SidebarFooter className='border-t m-2 '>
+        {isAuthenticated ? (
+          <>
+            <SignOutButton className='w-full' />
+          </>
+        ) : (
+          <>
+            <SignInButton className='w-full' />
+          </>
+        )}
       </SidebarFooter>
     </Sidebar>
   );

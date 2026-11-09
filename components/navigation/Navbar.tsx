@@ -1,7 +1,5 @@
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { CircleUserRound } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -14,13 +12,12 @@ import {
 import { links } from '@/lib/links';
 import Sidenav from './Sidenav';
 import { SidebarTrigger } from '@/components/ui/sidebar';
-import { signIn } from '@/lib/auth';
+import { getSession, signIn, signOut } from '@/lib/auth';
+import { SignInButton, SignOutButton } from '../feature';
 
-const Navbar = () => {
-  const handleSignIn = async () => {
-    'use server';
-    await signIn('keycloak');
-  };
+const Navbar = async () => {
+  const { isAuthenticated } = await getSession({});
+
   return (
     <header className='sticky top-0 z-50 flex h-20 w-full items-center justify-between border-b bg-background/70 px-4 py-2 backdrop-blur-xl backdrop-saturate-180'>
       <Image
@@ -29,9 +26,10 @@ const Navbar = () => {
         width={50}
         height={50}
         loading='eager'
+        className='shrink-0'
       />
-      <NavigationMenu className='mx-0 lg:flex h-full max-w-none flex-1 flex-col items-center hidden'>
-        <NavigationMenuList className='flex h-full items-center justify-start gap-1 md:gap-5 text-primary'>
+      <NavigationMenu className='mx-0 hidden h-full max-w-none flex-1 flex-col items-center lg:flex'>
+        <NavigationMenuList className='flex h-full items-center justify-start gap-1 text-primary md:gap-5'>
           {links.map((link) => (
             <NavigationMenuItem key={link.href}>
               {link.subLinks?.length ? (
@@ -39,6 +37,7 @@ const Navbar = () => {
                   <NavigationMenuTrigger className='gap-2 py-2'>
                     {link.name}
                   </NavigationMenuTrigger>
+
                   <NavigationMenuContent>
                     <ul className='grid w-56 gap-1 p-2'>
                       {link.subLinks.map((subLink) => (
@@ -64,22 +63,11 @@ const Navbar = () => {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <div className='items-center gap-4 px-3 hidden lg:flex'>
-        <form action={handleSignIn}>
-          <Button
-            variant='ghost'
-            type='submit'
-            className='hidden border-primary/50 bg-background/60 text-primary backdrop-blur-xl transition-colors hover:bg-primary hover:text-white lg:flex'>
-            <span>
-              <CircleUserRound />
-            </span>
-            <p className='hidden xl:block'>Account</p>
-          </Button>
-        </form>
+      <div className='hidden shrink-0 items-center gap-4 px-3 lg:flex'>
+        {isAuthenticated ? <SignOutButton /> : <SignInButton />}
       </div>
-      <div className='block lg:hidden'>
-        <SidebarTrigger />
-        <Sidenav links={links} />
+      <div className='flex shrink-0 items-center lg:hidden'>
+        <SidebarTrigger className='shrink-0' />
       </div>
     </header>
   );
