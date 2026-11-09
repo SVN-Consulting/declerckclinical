@@ -14,8 +14,13 @@ import {
 import { links } from '@/lib/links';
 import Sidenav from './Sidenav';
 import { SidebarTrigger } from '@/components/ui/sidebar';
+import { signIn } from '@/lib/auth';
 
 const Navbar = () => {
+  const handleSignIn = async () => {
+    'use server';
+    await signIn('keycloak');
+  };
   return (
     <header className='sticky top-0 z-50 flex h-20 w-full items-center justify-between border-b bg-background/70 px-4 py-2 backdrop-blur-xl backdrop-saturate-180'>
       <Image
@@ -60,14 +65,17 @@ const Navbar = () => {
         </NavigationMenuList>
       </NavigationMenu>
       <div className='items-center gap-4 px-3 hidden lg:flex'>
-        <Button
-          variant='ghost'
-          className='hidden border-primary/50 bg-background/60 text-primary backdrop-blur-xl transition-colors hover:bg-primary hover:text-white lg:flex'>
-          <span>
-            <CircleUserRound />
-          </span>
-          <p className='hidden xl:block'>Account</p>
-        </Button>
+        <form action={handleSignIn}>
+          <Button
+            variant='ghost'
+            type='submit'
+            className='hidden border-primary/50 bg-background/60 text-primary backdrop-blur-xl transition-colors hover:bg-primary hover:text-white lg:flex'>
+            <span>
+              <CircleUserRound />
+            </span>
+            <p className='hidden xl:block'>Account</p>
+          </Button>
+        </form>
       </div>
       <div className='block lg:hidden'>
         <SidebarTrigger />
