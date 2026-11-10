@@ -9,8 +9,10 @@ const links: Link[] = [
     href: '#about',
     name: 'About me',
     subLinks: [
-      { href: '/about', name: 'About me' },
-      { href: '/about/experience', name: 'Experience' },
+      { href: '/about#missionandvision', name: 'Mission and Vision' },
+      { href: '/about#senior-cra', name: 'Senior CRA' },
+      { href: '/about#experience', name: 'Experience' },
+      { href: '/about#ourapproche', name: 'Our Approach' },
     ],
   },
   {
