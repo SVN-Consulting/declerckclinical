@@ -1,9 +1,6 @@
 name: declerkclinicalconsulting-dev
 
 services:
-  # --------------------------------------------------
-  # PostgreSQL
-  # --------------------------------------------------
   postgres:
     image: postgres:17-alpine
     container_name: postgres
@@ -25,9 +22,20 @@ services:
       timeout: 5s
       retries: 5
 
-  # --------------------------------------------------
-  # Keycloak
-  # --------------------------------------------------
+  cloudbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: cloudbeaver
+    restart: unless-stopped
+    ports:
+      - '8978:8978'
+    volumes:
+      - cloudbeaver_data:/opt/cloudbeaver/workspace
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - local-network
+
   keycloak:
     image: quay.io/keycloak/keycloak:latest
     container_name: keycloak
@@ -39,10 +47,8 @@ services:
       KC_DB_URL_DATABASE: keycloak_db
       KC_DB_USERNAME: ${POSTGRES_USER}
       KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
-
       KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN}
       KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
-
       KC_HTTP_ENABLED: 'true'
       KC_HEALTH_ENABLED: 'true'
     ports:
@@ -53,9 +59,6 @@ services:
     networks:
       - local-network
 
-  # --------------------------------------------------
-  # Portainer CE
-  # --------------------------------------------------
   portainer:
     image: portainer/portainer-ce:latest
     container_name: portainer
@@ -69,17 +72,12 @@ services:
     networks:
       - local-network
 
-# --------------------------------------------------
-# Networks
-# --------------------------------------------------
 networks:
   local-network:
     name: local-network
     driver: bridge
 
-# --------------------------------------------------
-# Volumes
-# --------------------------------------------------
 volumes:
   postgres_data:
+  cloudbeaver_data:
   portainer_data:
