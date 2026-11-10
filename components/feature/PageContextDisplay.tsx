@@ -51,7 +51,7 @@ const PageContextDisplay = ({
       ref={articleRef}
       id={id}
       className={cn(
-        'h-screen',
+        'h-screen scroll-mt-24',
         blockanimation && !isVisible && 'opacity-0',
         isVisible && blockanimation,
       )}>
