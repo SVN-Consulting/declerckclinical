@@ -9,3 +9,9 @@ export type SocialLink = {
   href: string;
   icon: React.ReactNode;
 };
+
+export type ServiceCard = {
+  header: string;
+  content: string[];
+  cta?: React.ReactNode;
+};
