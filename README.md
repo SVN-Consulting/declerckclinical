@@ -20,7 +20,7 @@ The following requirements define the planned functionality of the application.
 | REQ-002 | Website layout and navigation       | `feature/layout-navigation` | 🚀 Released |
 | REQ-003 | Home page                           | `feature/home-page`         | 🚀 Released |
 | REQ-004 | About / experience information      | `feature/about`             | 🔄 Planned  |
-| REQ-005 | Services                            | `feature/services`          | ⬜ Planned  |
+| REQ-005 | Services                            | `feature/services`          | ✅ Planned  |
 | REQ-006 | Expertise & Resources               | `feature/expertise`         | ⬜ Planned  |
 | REQ-007 | Contact page and contact form       | `feature/contact`           | ⬜ Planned  |
 | REQ-008 | Legal and Privacy                   | `feature/legal`             | ⬜ Planned  |

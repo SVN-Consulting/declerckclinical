@@ -9,3 +9,15 @@ export type SocialLink = {
   href: string;
   icon: React.ReactNode;
 };
+
+export type Service = {
+  id: string;
+  header: string;
+  content: readonly string[];
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type ServiceCard = {
+  cta?: React.ReactNode;
+} & Service;
