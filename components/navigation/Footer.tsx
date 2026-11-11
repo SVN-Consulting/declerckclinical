@@ -98,13 +98,13 @@ const Footer = () => {
           © {BUILD_YEAR} {COMPANY_NAME}. All rights reserved.
         </p>
         <p>
-          Made by{' '}
+          Handcrafted by{' '}
           <a
-            href='https://svnconsulting.com'
+            href='https://codesvn.be'
             target='_blank'
             rel='noopener noreferrer'
             className='text-white transition-colors hover:underline'>
-            SVN Consulting
+            CodeSVN
           </a>
           .
         </p>
