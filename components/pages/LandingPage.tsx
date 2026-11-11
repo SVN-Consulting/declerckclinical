@@ -5,9 +5,7 @@ import { COMPANY_NAME, COMPANY_SLOGAN } from '@/lib/constrains';
 
 const LandingPage = () => {
   return (
-    <section
-      id='home'
-      className='relative flex min-h-screen w-full items-center justify-center overflow-hidden'>
+    <section className='relative flex min-h-screen w-full items-center justify-center overflow-hidden'>
       <Image
         src='/images/landingpage.jpg'
         alt=''

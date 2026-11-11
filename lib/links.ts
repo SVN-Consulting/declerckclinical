@@ -2,7 +2,7 @@ import { Link } from '@/lib/types';
 
 const links: Link[] = [
   {
-    href: '#home',
+    href: '/',
     name: 'Home',
   },
   {
