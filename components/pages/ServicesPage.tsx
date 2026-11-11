@@ -5,9 +5,8 @@ const ServicesPage = async () => {
   const services = await getServices();
 
   return (
-    <section className='flex flex-col gap-8 w-full h-full px-4 md:px-8 lg:px-16 py-8 mx-auto container'>
+    <section className='flex flex-col gap-8 w-full  px-4 md:px-8 lg:px-16 py-8 mx-auto container'>
       <PageContentDisplay
-        id='#'
         blockanimation='animate-fade-in-up'
         title={{
           tag: 'h2',
