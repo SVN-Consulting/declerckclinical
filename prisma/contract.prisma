@@ -1,0 +1,9 @@
+// use prisma-8
+
+model Service {
+  id          String   @id @onCreate(uuid())
+  header      String
+  content     String[]
+  createdAt   DateTime @onCreate(now()) 
+  updatedAt   DateTime @onUpdate(now())
+}

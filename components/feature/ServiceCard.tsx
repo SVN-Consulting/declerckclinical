@@ -1,4 +1,4 @@
-import { Monitor } from 'lucide-react';
+import { CheckCheck } from 'lucide-react';
 import {
   Card,
   CardContent,
@@ -21,7 +21,7 @@ const ServiceCard = ({ header, content, cta }: ServiceCardType) => {
               key={index}
               className='text-gray-700 mb-1 flex items-center gap-2'>
               <span>
-                <Monitor className='w-4 h-4' />
+                <CheckCheck className='w-4 h-4' />
               </span>
               {item}
             </p>

@@ -1,7 +1,9 @@
 import { PageContentDisplay, ServiceCard } from '../feature/';
-import { services } from '@/lib/services';
+import { getServices } from '@/data/services';
 
-const ServicesPage = () => {
+const ServicesPage = async () => {
+  const services = await getServices();
+
   return (
     <section className='flex flex-col gap-8 w-full h-full px-4 md:px-8 lg:px-16 py-8 mx-auto container'>
       <PageContentDisplay
@@ -12,7 +14,7 @@ const ServicesPage = () => {
           text: 'Services',
           className: 'text-primary',
         }}>
-        <div>
+        <div className='flex flex-col md:flex-row flex-wrap gap-4 justify-center items-stretch'>
           {services.map((service) => (
             <ServiceCard key={service.header} {...service} />
           ))}
