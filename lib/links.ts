@@ -16,13 +16,6 @@ const links: Link[] = [
   {
     href: '/services',
     name: 'Services',
-    subLinks: [
-      { href: '/services', name: 'Services' },
-      {
-        href: '/services#therapeutic-expertise',
-        name: 'Therapeutic expertise',
-      },
-    ],
   },
   {
     href: '/quality',
